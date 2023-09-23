@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80 #service-port
+      targetPort: 80 #pod-port
+      nodePort: 30008 #node-port
+
+  selector:
+    app: myapp
+    type: front-end
+    
+
+
+  
